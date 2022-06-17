@@ -1,0 +1,30 @@
+.logo-ml {
+  background-image: url(https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.9/mercadolibre/logo__large_plus@2x.png);
+  -webkit-background-size: 134px 34px;
+  background-size: 134px 34px;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 34px;
+}
+
+.main-header {
+  max-width: 1200px;
+}
+
+.main-container {
+  background-color: #fff159;
+  height: auto;
+}
+
+.search-bar{
+  background-color: #ffff;
+  height: auto;
+  button{
+    border-left: none;
+    border-radius: 0px;
+  }
+  input{
+    border-right: none;
+    border-radius: 0px;
+  }
+}
