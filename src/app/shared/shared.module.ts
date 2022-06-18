@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductCardModule } from './modules/product-card/product-card.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -8,7 +9,8 @@ import { ProductCardModule } from './modules/product-card/product-card.module';
   declarations: [],
   imports: [
     CommonModule,
-    ProductCardModule
+    ProductCardModule,
+    ReactiveFormsModule
   ],
   exports: [
     ProductCardModule

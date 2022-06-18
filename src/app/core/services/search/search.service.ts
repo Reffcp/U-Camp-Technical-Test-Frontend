@@ -15,6 +15,6 @@ export class SearchService {
   ) { }
 
   search(query: string): Observable<any> {
-    return this.http.get(`${API_URL}/search${(query != '') ? '?q=' + query : ''}`);
+    return this.http.get(`${API_URL}/search${(query != '') ? '?query=' + query : ''}`);
   }
 }
