@@ -1,7 +1,31 @@
 <div class="container-expand product-card">
-  <div class="row d-flex justify-content-center">
+  <div class="row d-flex justify-content-center" style="height: 350px;">
     <div class="col-12">
-      Hola mundo
+      <div style="width: 11em; height: 12em;
+      max-height: unset;
+      background-image: url({{product?.thumbnail}});
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;">
+      </div>
+      <!-- <img width="284px" height="284px" decoding="async" [src]="product?.thumbnail" [alt]="product?.title"> -->
+    </div>
+    <div class="col-12">
+      <h5 class="product-price">{{product?.price| currency }}</h5>
+    </div>
+    <div class="col-12">
+      <span class="text-wrap product-title">
+        {{product?.title}}
+      </span>
+    </div>
+    <div class="col-4 product-meta pb-1">
+      <span [style]="(product?.condition === 'new') ? 'color: #00a650;' : ''">
+        <b>{{(product?.condition === 'new') ? 'Nuevo' : 'Usado'}}</b>
+      </span>
+    </div>
+    <div class="col-8 product-meta-quantity pb-1 m-0 text-end">
+      <span *ngIf="product"><b>{{product.available_quantity}}</b> Disponible{{(product.available_quantity > 1) ? 's' :
+        ''}}</span>
     </div>
   </div>
 </div>

@@ -2,6 +2,26 @@
   div {
     div {
       background-color: #fff;
+      img{
+        width: 100%;
+        max-height: unset;
+      }
     }
   }
+}
+
+.product-price{
+  color: rgb(82, 82, 82);
+}
+
+.product-title{
+  color: rgb(157, 157, 157);
+  font-size: 0.9rem;
+}
+
+.product-meta{
+  font-size: 0.9rem;
+}
+.product-meta-quantity{
+  font-size: 0.8rem;
 }
