@@ -1,7 +1,10 @@
 <div class="container-expand main-home">
   <div class="row d-flex justify-content-center">
     <section class="col-12 mt-5 row d-flex">
-      <div class="col-2 m-1">
+      <div class="col-12 m-1">
+        <h4>Recomendados</h4>
+      </div>
+      <div class="col-2 m-1" *ngFor="let product of products">
         <app-product-card></app-product-card>
       </div>
     </section>
