@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:3200/api',
+  item_condition: 'ITEM_CONDITION',
 };
 
 /*

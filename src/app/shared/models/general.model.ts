@@ -10,3 +10,14 @@ export interface IPagingModel {
   pageIndex: number;
   previousPageIndex: number;
 }
+
+export interface IItemFilterCondition {
+  name: string;
+  id: string;
+  results: number;
+}
+
+export interface IItemSortCondition {
+  name: string;
+  id: string;
+}

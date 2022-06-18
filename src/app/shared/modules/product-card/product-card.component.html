@@ -1,7 +1,7 @@
 <div class="container-expand product-card">
   <div class="row d-flex justify-content-center" style="height: 350px;">
     <div class="col-12">
-      <div style="width: 11em; height: 12em;
+      <div style="width: 10em; height: 11em;
       max-height: unset;
       background-image: url({{product?.thumbnail}});
       background-position: center;
@@ -10,8 +10,8 @@
       </div>
       <!-- <img width="284px" height="284px" decoding="async" [src]="product?.thumbnail" [alt]="product?.title"> -->
     </div>
-    <div class="col-12">
-      <h2 class="product-price">{{product?.price| currency }}</h2>
+    <div class="col-12 d-flex row">
+      <h3 class="product-price">{{product?.price| currency }}</h3>
     </div>
     <div class="col-12">
       <span class="text-wrap product-title">
@@ -19,8 +19,8 @@
       </span>
     </div>
     <div class="col-4 product-meta pb-1">
-      <span [style]="(product?.condition === 'new') ? 'color: #00a650;' : ''">
-        <b>{{(product?.condition === 'new') ? 'Nuevo' : 'Usado'}}</b>
+      <span *ngIf="product" [style]="(product.condition === 'new') ? 'color: #00a650;' : ''">
+        <b>{{validateProductCondition(product.condition)}}</b>
       </span>
     </div>
     <div class="col-8 product-meta-quantity pb-1 m-0 text-end">

@@ -12,7 +12,7 @@ const routes: Routes = [
         loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
       },
       {
-        path: ':busqueda',
+        path: 'search/:busqueda',
         loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
       },
     ]

@@ -14,4 +14,13 @@ export class ProductCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  validateProductCondition(condition: string): string {
+    if (condition === 'new') {
+      return 'Nuevo';
+    } else if (condition === 'used') {
+      return 'Usado';
+    } else {
+      return 'Nuevo';
+    }
+  }
 }

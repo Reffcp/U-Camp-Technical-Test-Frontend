@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   }
 
   buscar() {
-    this.router.navigate(['/', this.buscador.value.busqueda]);
+    this.router.navigate(['/search', this.buscador.value.busqueda]);
   }
 
 }

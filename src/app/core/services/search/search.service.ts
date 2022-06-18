@@ -14,7 +14,7 @@ export class SearchService {
     private http: HttpClient
   ) { }
 
-  search(query: string, limit: number, offset: number): Observable<any> {
-    return this.http.get(`${API_URL}/search?query=${query}&limit=${limit}&offset=${offset}`);
+  search(query: string, limit: number, offset: number, itemCondition: string | null, orderBy: string | null): Observable<any> {
+    return this.http.get(`${API_URL}/search?query=${query}&limit=${limit}&offset=${offset}${(itemCondition !== null) ? `&item_condition=${itemCondition}` : ''}${(orderBy !== null) ? `&sort=${orderBy}` : ''}`);
   }
 }

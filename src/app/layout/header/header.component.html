@@ -4,11 +4,11 @@
     </div>
     <div class="col-7">
       <!-- input buscador de productos con bootstrap -->
-      <form [formGroup]="buscador" class="input-group mb-3 mt-3 search-bar">
+      <form [formGroup]="buscador" (submit)="buscar()" class="input-group mb-3 mt-3 search-bar">
         <input formControlName="busqueda" type="text" class="form-control" placeholder="Buscar producto" aria-label="Recipient's username"
           aria-describedby="basic-addon2">
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" (click)="buscar()" type="button">
+          <button class="btn btn-outline-secondary" type="submit">
             <i class="bi bi-search"></i>
           </button>
         </div>
