@@ -15,6 +15,10 @@
       <div class="col-2 m-1" *ngFor="let product of products">
         <app-product-card style="height: 350px;" [product]="product"></app-product-card>
       </div>
+      <div class="col-12 m-1">
+        <mat-paginator [length]="pageSize" [pageSize]="30" aria-label="Select page" (page)="changePage($event)">
+        </mat-paginator>
+      </div>
     </section>
   </div>
 </div>

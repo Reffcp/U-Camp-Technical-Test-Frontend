@@ -1,7 +1,7 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SearchService } from 'src/app/core/services/search/search.service';
-import { IResponseHttpModel } from 'src/app/shared/models/general.model';
+import { IPagingModel, IResponseHttpModel } from 'src/app/shared/models/general.model';
 import { IProductModel } from 'src/app/shared/models/product.model';
 
 @Component({
@@ -13,21 +13,22 @@ export class HomeComponent implements OnInit {
 
   products: IProductModel[] = [];
   oldOrderProducts: any = [];
+  pageSize: number = 0;
+  limit: number = 30;
+  offset: number = 0;
 
   constructor(
     private searchService: SearchService,
     private activatedRoute: ActivatedRoute
   ) { }
 
-  // ngOnChanges(): void {
-  //   this.ngOnInit();
-  // }
-
   ngOnInit(): void {
+    this.getParams();
+  }
+
+  getParams(): void {
     this.activatedRoute.paramMap.subscribe(
       (params: any) => {
-        console.log(params.params.busqueda);
-
         if (params.params) {
           this.search(params.params.busqueda);
         } else {
@@ -38,8 +39,11 @@ export class HomeComponent implements OnInit {
   }
 
   search(query: string) {
-    this.searchService.search(query).subscribe(
+    this.searchService.search(query, this.limit, this.offset).subscribe(
       (data: IResponseHttpModel) => {
+        this.pageSize = data.body.paging.total;
+        this.products = [];
+        this.oldOrderProducts = [];
         data.body.results.forEach((product: any) => {
           this.products.push(product);
           this.oldOrderProducts.push(product);
@@ -67,7 +71,12 @@ export class HomeComponent implements OnInit {
       }
       );
     }
+  }
 
+  changePage(page: any) {
+    let paging: IPagingModel = page;
+    this.offset = paging.pageIndex * paging.pageSize;
+    this.getParams();
   }
 
 }

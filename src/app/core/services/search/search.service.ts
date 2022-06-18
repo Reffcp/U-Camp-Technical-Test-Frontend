@@ -14,7 +14,7 @@ export class SearchService {
     private http: HttpClient
   ) { }
 
-  search(query: string): Observable<any> {
-    return this.http.get(`${API_URL}/search${(query != '') ? '?query=' + query : ''}`);
+  search(query: string, limit: number, offset: number): Observable<any> {
+    return this.http.get(`${API_URL}/search?query=${query}&limit=${limit}&offset=${offset}`);
   }
 }

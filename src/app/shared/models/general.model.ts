@@ -3,3 +3,10 @@ export interface IResponseHttpModel {
   error: boolean;
   body: any;
 }
+
+export interface IPagingModel {
+  length: number;
+  pageSize: number;
+  pageIndex: number;
+  previousPageIndex: number;
+}
