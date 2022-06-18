@@ -12,6 +12,7 @@ import { IProductModel } from 'src/app/shared/models/product.model';
 export class HomeComponent implements OnInit {
 
   products: IProductModel[] = [];
+  oldOrderProducts: any = [];
 
   constructor(
     private searchService: SearchService,
@@ -39,9 +40,34 @@ export class HomeComponent implements OnInit {
   search(query: string) {
     this.searchService.search(query).subscribe(
       (data: IResponseHttpModel) => {
-        this.products = data.body.results;
+        data.body.results.forEach((product: any) => {
+          this.products.push(product);
+          this.oldOrderProducts.push(product);
+        }
+        );
       }
     );
+  }
+
+  // metodo para ordenar los productos de mayor a menor por precio o viceversa
+  orderByPrice(order: string) {
+    if (order === 'default') {
+      this.products = [];
+      this.oldOrderProducts.forEach((product: any) => {
+        this.products.push(product);
+      }
+      );
+    } else {
+      this.products.sort((a, b) => {
+        if (order === 'asc') {
+          return a.price - b.price;
+        } else {
+          return b.price - a.price;
+        }
+      }
+      );
+    }
+
   }
 
 }

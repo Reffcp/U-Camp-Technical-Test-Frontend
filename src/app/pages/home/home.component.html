@@ -1,8 +1,16 @@
 <div class="container-expand main-home pt-4 pb-4">
   <div class="row d-flex justify-content-center">
     <section class="col-12 mt-5 row d-flex justify-content-center">
-      <div class="col-12 m-1">
-        <h4>Recomendados</h4>
+      <div class="col-12 m-1 d-flex">
+        <h4 class="col-8">Recomendados</h4>
+        <div class="col-3">
+          <!-- selector con label para ordenar los productos por precio de mayor a menor o viceversa-->
+          <select #ordenar class="col-12" id="selector" name="selector" (change)="orderByPrice(ordenar.value)">
+            <option value="default">Más Relevantes</option>
+            <option value="asc">Precio: de menor a mayor</option>
+            <option value="desc">Precio: de mayor a menor</option>
+          </select>
+        </div>
       </div>
       <div class="col-2 m-1" *ngFor="let product of products">
         <app-product-card style="height: 350px;" [product]="product"></app-product-card>
