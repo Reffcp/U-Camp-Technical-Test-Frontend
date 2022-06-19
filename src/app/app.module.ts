@@ -8,11 +8,13 @@ import { CoreModule } from './core/core.module';
 import { HeaderComponent } from './layout/header/header.component';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
