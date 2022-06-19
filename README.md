@@ -1,27 +1,36 @@
-# UCampTechnicalTestFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+#  U Camp Technical Test
+**🤟🏻Prueba técnica para los futuros instructores y facilitadores de U Camp 🤓💻**
 
-## Development server
+📝El objetivo del test técnico es construir un Front-End que interactua con nuestro backend y a su vez con una API externa.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Indicaciones
+Se creaó una App en Angular con los siguientes componentes:
 
-## Code scaffolding
+#### SearchBar
+Un Layout de angular que contiene un formulario **reactivo** con un input de búsqueda, que dispara los requests a la API (a nuestro BACK-END).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Product Card
+En este componente recibimos un @Input por medio de angular y de el se muestra:
 
-## Build
+- su imagen
+- su titulo
+- su precio (con la moneda)
+- su condición
+- si tiene stock o no
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#### Catálogo
+Este es el componente principal de la pagina en el cual:
 
-## Running unit tests
+- Se ordenan los productos en base a su precio, de forma ascendente o descendente.
+- Se filtran por condición del artículo.
+- Se pagina de 30 en 30 mostrando el total de resultados.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Librerías externas utilizadas
+- Bootstrap
+- Material Angular
+- Bootstrap Icons
+- Firebase
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### Demo
+Puedes probar el demo de la app desplegado en firebase, haciendo click [acá](https://utel-camp-tecchnical-test.web.app/).
