@@ -7,6 +7,19 @@
   min-height: 34px;
 }
 
+// media query para moviles
+@media (max-width: 768px) {
+  .logo-ml {
+    background-image: url(https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.9/mercadolibre/logo__large_plus@2x.png);
+    -webkit-background-size: 134px 34px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 34px;
+    margin-right: 1rem;
+  }
+}
+
 .main-header {
   max-width: 1200px;
 }
